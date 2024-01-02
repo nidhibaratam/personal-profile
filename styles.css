@@ -1,0 +1,517 @@
+html, body {
+    height: 100%;
+    margin: 0px;
+  }
+  
+  body {
+    background-color: #292929;
+  }
+  
+  main {
+    display: flex;
+    max-width: 1000px;
+    /* Limit homepage content so that we'll always see the background*/
+    width: 95%;
+    background-color: #3D3D3D;
+    /* Centers all interior divs */
+    justify-content: center;
+    /* With flex display, this centers this div on the page */
+    margin: auto;
+  }
+  
+  #my-photo {
+    /* Center photo */
+    display: flex;
+    justify-content: center;
+    margin: auto;
+  }
+  
+  #my-photo-img-tag {
+    padding-top: 25px;
+    /* Scale image with the viewport */
+    max-width: 400px;
+    width: 70%;
+  }
+  
+  /* Properties apply to all text elements */
+  .article-text, #header-name, #tagline, #attribution, #home-button,
+    #resume-button, #qual-button, #contact-button, #read-more-button,
+    .page-title, #contact-main-text, #reveal-email-button,
+    #resume-main-text, #qual-main-text {
+    font-family: 'Rubik', 'Trebuchet MS', sans-serif;
+    color: #FFFFF0;
+  }
+  
+  /* Text in main content of pages */
+  .article-text, #contact-main-text, #resume-main-text,
+    #qual-main-text {
+    max-width: 800px;
+    display: block;
+    font-size: 22px;
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+  
+  /* Will display when visitor chooses to read more */
+  #more-about-me {
+    display: none;
+  }
+  
+  /* This button activates more-about-me */
+  #read-more-button {
+    color: #A3A3A3;
+    font-size: 22px;
+    background-color: transparent;
+    border-width: 0px;
+    padding-left: 0px;
+    padding-top: 0px;
+    text-decoration: underline;
+    margin-bottom: 1.5em;
+  }
+  
+  /* Read more button hover and click actions */
+  #read-more-button:hover {
+    cursor: pointer;
+  }
+  #read-more-button:active {
+    opacity: 50%;
+  }
+  
+  #content-separator {
+    border-width: 1px;
+    border-color: #FFFFF0;
+  }
+  
+  #more-about-me-header {
+    font-weight: bolder;
+    font-size: 40px;
+    margin-top: 1em;
+    margin-bottom: 0px;
+  }
+  
+  .about-me-subheading {
+    font-weight: bolder;
+    font-size: 28px;
+  }
+  
+  /* Final paragraphs of each section get a little more padding below */
+  .ending-paragraph {
+    margin-bottom: 1.5em;
+  }
+  
+  /* General styling for title on each page */
+  .page-title {
+    font-size: 72px;
+    font-weight: bolder;
+    text-align: center;
+    margin-bottom: 0.5em;
+  }
+  
+  /* Centers qual page title at small viewports */
+  #qual-header {
+    display: flex;
+    justify-content: center;
+  }
+  
+  /* Bigger font for some pages */
+  #contact-main-text, #resume-main-text, #qual-main-text {
+    font-size: 26px;
+    width: 80%;
+  }
+  
+  #contact-paragraph1 {
+    /* Changes with button press */
+    margin-bottom: 1em;
+  }
+  
+  /* Button to reveal email address; some styles also apply
+    to resume download link */
+  #reveal-email-button, #resume-download-link {
+    /* Centers button horizontally */
+    /* Changes with button press */
+    display: flex;
+    margin: auto;
+    background-color: #047377;
+    font-size: 18px;
+    border-color: #FFFFF0;
+    border-style: solid;
+    border-radius: 20px;
+    padding-left: 1em;
+    padding-right: 1em;
+    padding-top: 0.25em;
+    padding-bottom: 0.25em;
+    /* For hover and click transitions */
+    transition: background-color 200ms;
+  }
+  
+  /* Set mouse pointer when hovering over reveal email button */
+  #reveal-email-button:hover {
+    cursor: pointer;
+  }
+  
+  #email {
+    /* Center address */
+    /* Changes with button press */
+    display: none;
+    margin: auto;
+    justify-content: center;
+    font-size: 22px;
+  }
+  
+  #copy-email-button {
+    margin-top: 0.7em;
+    margin-left: 0.5em;
+    width: 40px;
+    height: 40px;
+    transition: opacity 200ms;
+  }
+  
+  /* Hover and click actions for copy email button */
+  #copy-email-button:hover {
+    opacity: 70%;
+    cursor: pointer;
+  }
+  #copy-email-button:active {
+    opacity: 50%;
+  }
+  
+  /* Makes copy-confirmation element fade away */
+  @keyframes fade-confirmation {
+    from {
+      background-color: black;
+      color: #FFFFF0;
+    }
+    to {
+      background-color: #3D3D3D;
+      color: #3D3D3D;
+    }
+  }
+  
+  #copy-confirmation {
+    /* Center element */
+    /* Changes once email is copied */
+    display: none;
+    margin: auto;
+    justify-content: center;
+    font-size: 14px;
+    font-weight: bolder;
+    width: 8em;
+    background-color: black;
+    border-radius: 0.5em;
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;
+  }
+  
+  #contact-paragraph2 {
+    /* Changes when email is revealed */
+    margin-top: 1em;
+    margin-bottom: 8em;
+  }
+  
+  #contact-in-link, .qual-link {
+    color: #FFFFF0;
+    display: inline-block;
+    text-decoration-line: underline;
+    text-decoration-style: dashed;
+    transition: background-color 200ms;
+  }
+  
+  #download-button-section {
+    display: flex;
+    margin: auto;
+  }
+  
+  /* Remaining style changes for resume download link */
+  #resume-download-link {
+    text-decoration: none;
+    color: #FFFFF0;
+    display: inline-block;
+    border-width: 0.15em;
+  }
+  
+  #resume-image-header {
+    /*text-align: center;*/
+    text-decoration: underline;
+    font-weight: normal;
+    font-size: 26px;
+    margin-bottom: 0px;
+  }
+  
+  /* Styling for resume image containing element */
+  #resume-img-container {  
+    display: flex;
+    margin: auto;
+    justify-content: center;
+    padding-bottom: 1.5em;
+  }
+  
+  /* Styling for image tag itself */
+  #resume-img {
+    max-width: 800px;
+    width: 100%;
+  }
+  
+  /* Reduce margin to qual page link list */
+  #link-list-title {
+    margin-bottom: 0px;
+  }
+  
+  /* Applies styles to link list and items */
+  #link-list {
+    margin-top: 0.5em;
+    margin-bottom: 5em;
+    list-style-type: square;
+  }
+  
+  /* Increase space between list items */
+  .link-item {
+    padding-bottom: 0.5em;
+  }
+  
+  /* Reduce text size at smaller viewport size */
+  @media screen and (max-width: 700px) {
+    .article-text, #read-more-button {
+      font-size: 18px;
+    }
+  
+    #more-about-me-header {
+      font-size: 36px;
+    }
+  
+    .about-me-subheading {
+      font-size: 24px;
+    }
+  
+    .page-title {
+      font-size: 54px;
+    }
+  
+    #contact-main-text, #resume-main-text, #resume-image-header,
+      #qual-main-text {
+      font-size: 24px;
+    }
+  
+    #reveal-email-button, #resume-download-link {
+      font-size: 16px;
+    }
+  
+    #email {
+      font-size: 20px;
+    }
+  
+    #copy-email-button {
+      width: 35px;
+      height: 35px;
+    }
+  
+    #copy-confirmation {
+      font-size: 12px;
+    }
+  }
+  
+  /* Reduce qual page title further */
+  @media screen and (max-width: 500px) {
+    #qual-header {
+      font-size: 48px;
+    }
+  }
+  
+  #page-head {
+    background-color: #3D3D3D;
+  }
+  
+  #page-head-name {
+    display: inline-block;
+    margin-left: 45px;
+    margin-top: 25px;
+    margin-bottom: 30px;
+  }
+  
+  #header-name {
+    font-size: 108px;
+    /* Reduce space between headers */
+    margin-top: 20px;
+    margin-bottom: 10px;
+  }
+  
+  #tagline {
+    font-size: 30px;
+    /* Control space between headers using only my name */
+    margin-top: 0px;
+    margin-left: 3px;
+  }
+  
+  #header-links {
+    /* Aligns content to the right side of the header */
+    float: right;
+    margin-right: 120px;
+    margin-top: 80px;
+  }
+  
+  /* Limits size of anchor element to the image widths */
+  #in-link, #github-link, #contact-link {
+    display: inline-block;
+    transition: opacity 200ms;
+  }
+  
+  /* Header link hover and click actions (dim the images) */
+  #in-link:hover, #github-link:hover, #contact-link:hover {
+    opacity: 70%;
+  }
+  #in-link:active, #github-link:active, #contact-link:active {
+    opacity: 30%;
+  }
+  
+  .link-separator {
+    display: none;
+  }
+  
+  #in-logo {
+    width: 83px;
+    margin-right: 26px;
+  }
+  
+  #github-logo, #mail-icon {
+    width: 85px;
+  }
+  
+  #github-logo {
+    margin-right: 20px;
+  }
+  
+  /* Reposition & resize header links when viewport shrinks */
+  @media screen and (max-width: 1275px) {
+    #header-links {
+      float: none;
+      margin-top: 0px;
+      margin-left: 48px;
+      padding-bottom: 30px;
+      min-width: 200px;
+    }
+  
+    #in-logo {
+      width: 52px;
+      margin-right: 12px;
+    }
+  
+    #github-logo, #mail-icon {
+      width: 53px;
+    }
+  
+    #github-logo {
+      margin-right: 10px;
+    }
+  
+    #page-head-name {
+      margin-bottom: 0px;
+    }
+  }
+  
+  /* Resize header text at smaller viewports */
+  @media screen and (max-width: 840px) {
+    /* Text scales with viewport width */
+    #header-name {
+      font-size: 12vw;
+    }
+    
+    #tagline {
+      font-size: 3.4vw;
+    }
+  }
+  
+  footer {
+    background-color: #3D3D3D;
+  }
+  
+  #footer-separator {
+    background-color: #047377;
+    height: 20px;
+  }
+  
+  #attribution {
+    margin-top: 0px;
+    margin-bottom: 0px;
+    margin-left: 15px;
+    margin-right: 15px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    color: #A3A3A3;
+    font-size: 16px;
+    text-align: center;
+  }
+  
+  #openmoji-links {
+    color: #A3A3A3;
+    text-decoration: underline;
+    display: inline-block;
+  }
+  
+  #main-nav {
+    background-color: #047377;
+    height: 80px;
+    display: flex;
+  }
+  
+  /* General styling for navbar */
+  #home-button, #resume-button, #qual-button, #contact-button {
+    width: 25%;
+    border-style: solid;
+    border-top: none;
+    border-bottom: none;
+    border-color: #035b5d;
+    border-width: 2px;
+    text-align: center;
+    /* Centers text vertically */
+    padding-top: 1.1em;
+    text-decoration: none;
+    font-size: 24px;
+    font-weight: bold;
+    transition: background-color 200ms;
+  }
+  
+  /* Cutoff navbar text at high browser zoom */
+  #home-button, #resume-button, #contact-button {
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+  }
+  
+  /* Remove borders on ends of navbar */
+  #home-button {
+    border-left: none;
+  }
+  #contact-button {
+    border-right: none;
+  }
+  
+  #qual-button {
+    /* Qualifications button gets more padding */
+    padding-left: 10px;
+    padding-right: 10px;
+    /* Overflow settings */
+    overflow: auto;
+    hyphens: none;
+  }
+  
+  /* Shrink navbar text at smaller viewports */
+  @media screen and (max-width: 870px) {
+    #home-button, #resume-button, #qual-button, #contact-button {
+      font-size: 20px;
+      padding-top: 1.4em;
+    }
+  }
+  
+  /* Navbar hover and click actions (brighten each link) */
+  /* Also applies to buttons and links on other pages */
+  #home-button:hover, #resume-button:hover, #qual-button:hover,
+    #contact-button:hover, #reveal-email-button:hover,
+    #contact-in-link:hover, #resume-download-link:hover,
+    .qual-link:hover {
+    background-color: #069ba0;
+  }
+  #home-button:active, #resume-button:active, #qual-button:active,
+    #contact-button:active, #reveal-email-button:active,
+    #contact-in-link:active, #resume-download-link:active,
+    .qual-link:active {
+    background-color: #07b2b8;
+  }

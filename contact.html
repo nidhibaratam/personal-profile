@@ -1,0 +1,125 @@
+<!-- CONTACT Page -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Favicon inclusion -->
+  <link rel="icon" href="images/contacticon.ico">
+  <title>Contact | Baratam NidhiShri</title>
+  <!-- Using a non-web safe font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Rubik&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+  <!-- Page header -->
+  <header id="page-head">
+    <!-- Name and info; clicking will link back to homepage -->
+    <a href="index.html">
+      <div id="page-head-name">
+        <h1 id="header-name">Baratam NidhiShri</h1>
+        <h2 id="tagline">Electronics and Communications@LNM Institute of Information Technology </h2>
+      </div>
+    </a>
+    
+    <!-- Links to external content -->
+    <nav id="header-links">
+      <a href="https://www.linkedin.com/in/nidhi-shri-13750a283" target="_blank"
+        id="in-link">
+        <img src="images/legal-in-logo.png" alt="LinkedIn Bug"
+          id="in-logo">
+      </a>
+      <!-- Link separators allow the link images to be displayed side by side -->
+      <div class="link-separator"></div>
+      <a href="https://github.com/nidhibaratam" target="_blank"
+        id="github-link">
+        <img src="images/legal-github-logo.png" alt="GitHub Logo"
+          id="github-logo">
+      </a>
+      <div class="link-separator"></div>
+      <a href="contact.html" id="contact-link">
+        <img src="images/improved_mail_icon.png" alt="Mail Icon"
+          id="mail-icon">
+      </a>
+    </nav>
+  </header>
+
+  <!-- Main nav bar -->
+  <nav id="main-nav">
+    <a href="index.html" id="home-button">
+      HOME
+    </a>
+    <a href="resume.html" id="resume-button">
+      RESUME
+    </a>
+    <!-- Special character indicates hyphen when text overflows -->
+    <a href="qualifications.html" id="qual-button">
+      QUALIFICA&shy;TIONS
+    </a>
+    <a href="contact.html" id="contact-button">
+      CONTACT
+    </a>
+  </nav>
+
+  <!-- Contains all page elements beneath the header -->
+  <main>
+    <!-- Text for this section -->
+    <article id="contact-main-text">
+      <!-- Page title -->
+      <h2 class="page-title">CONTACT ME</h2>
+      <!-- Main page text -->
+      <p id="contact-paragraph1">
+        The best way to communicate with me is through email. 
+        I can be reached at the address below.
+      </p>
+      <!-- Reveals email -->
+      <button type="button" id="reveal-email-button" onclick="revealEmail()">
+        Click to Reveal Email Address
+      </button>
+      <section id="email">
+        <p id="no-peeking">
+          nice-try
+        </p>
+        <!-- Copies email address to clipboard -->
+        <img src="images/bestester-cp-button.png" alt="Copy Email Button"
+          id="copy-email-button" title="Copy email" onclick="copyAddress()">
+      </section>
+      <!-- Displays when user clicks copy email button -->
+      <span id="copy-confirmation">Could not copy email. Try again</span>
+      <!-- More main page text -->
+      <p id="contact-paragraph2">
+        I can also be reached on LinkedIn. If you are part of my
+        network, you can message me through my profile by
+        <a href="https://www.linkedin.com/in/nidhi-shri-13750a283"
+          target="_blank" id="contact-in-link">
+          clicking here
+        </a>.
+      </p>
+    </article>
+  </main>
+
+  <!-- Page footer -->
+  <footer>
+    <div id="footer-separator"></div>
+    <p id="attribution">
+      <a href="https://openmoji.org/" target="_blank"
+        id="openmoji-links">
+      </a>
+      
+      <a href="https://creativecommons.org/licenses/by-sa/4.0/#"
+        target="_blank" id="openmoji-links">
+      </a>
+    </p>
+  </footer>
+
+  <!-- Load JS -->
+  <script src="app.js"></script>
+</body>
+
+</html>
